@@ -1,0 +1,28 @@
+package com.tcs_nqt_15_march_coding;
+import java.util.Scanner;
+public class SumOfNumbersInRange2 
+{
+	public static int rangeSum(int i, int j) {
+        return (j * (j + 1) / 2) - (i * (i - 1) / 2);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the numbers=");
+        
+        try {
+            int i = sc.nextInt();
+            int j = sc.nextInt();
+            
+            if (i > j || i < 0 || j >= 10000) {
+                System.out.println("Invalid input i & j: i <= j < 10000");
+            } else {
+                System.out.println(rangeSum(i, j) + " ");
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid input i & j: i <= j < 10000");
+        } finally {
+            sc.close();
+        }
+    }
+}
